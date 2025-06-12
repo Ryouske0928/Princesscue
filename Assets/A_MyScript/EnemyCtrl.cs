@@ -5,6 +5,11 @@ using UnityEngine;
 public class EnemyCtrl : MonoBehaviour
 {
     [SerializeField] string WeaponTag = "Sword";
+    public GameClear gameClear;
+    private void Start()
+    {
+        //gameClear = GetComponent<GameClear>();
+    }
     private void OnTriggerEnter(Collider other)  //‚Ç‚Á‚¿‚Å‚à”½‰ž‚·‚é‚æ‚¤‚É,Enter‚ÆStay
     {
         Damage(other.tag);
@@ -20,6 +25,7 @@ public class EnemyCtrl : MonoBehaviour
         Debug.Log("“–‚½‚Á‚½" + tag);
         if (tag == WeaponTag)
         {
+            gameClear.DefeatBoss = true;
             Destroy(gameObject);
         }
     }

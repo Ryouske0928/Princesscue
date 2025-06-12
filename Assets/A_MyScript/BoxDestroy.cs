@@ -20,8 +20,7 @@ public class BoxDestroy : MonoBehaviour
         Debug.Log("î†îjâÛÅI" + tag);
         if (tag == WeaponTag)
         {
-            Destroy(gameObject);
-
+            gameObject.SetActive(false);
         }
     }
 }

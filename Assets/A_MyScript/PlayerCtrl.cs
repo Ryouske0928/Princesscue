@@ -13,9 +13,11 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]private float _jumpPower;
     private float _gravity = -9.8f;
     private Vector3 velocityY;
+    private GameClear GameClear;
 
     private void Awake()
     {
+        GameClear = GetComponent<GameClear>();
         targetRotation = transform.rotation;
     }
     // Start is called before the first frame update
