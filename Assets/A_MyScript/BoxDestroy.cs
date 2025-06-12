@@ -2,25 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyCtrl : MonoBehaviour
+public class BoxDestroy : MonoBehaviour
 {
     [SerializeField] string WeaponTag = "Sword";
     private void OnTriggerEnter(Collider other)  //どっちでも反応するように,EnterとStay
     {
-        Damage(other.tag);
+        BoxDamage(other.tag);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Damage(other.tag);
+        BoxDamage(other.tag);
     }
 
-    private void Damage(string tag)　  //ダメージ判定
+    private void BoxDamage(string tag)　  //アイテムBox破壊判定
     {
-        Debug.Log("当たった" + tag);
+        Debug.Log("箱破壊！" + tag);
         if (tag == WeaponTag)
         {
             Destroy(gameObject);
+
         }
     }
 }
