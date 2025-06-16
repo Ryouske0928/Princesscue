@@ -68,7 +68,6 @@ public class PlayerCtrl : MonoBehaviour
         //‹ó’†‚ÅUŒ‚‚Í‚»‚Ì‚Ü‚ÜˆÚ“®‚·‚é‚æ‚¤‚Éˆ—
         else if(anime.GetBool("isAttack") && !canMove && !characterController.isGrounded)
         {
-            Debug.Log("‚í‚½‚µ‚ªŒÄ‚Î‚ê‚½I");
             combinedMove = moveDirection * _moveSpeed;
         }
 
@@ -93,7 +92,6 @@ public class PlayerCtrl : MonoBehaviour
         AnimatorStateInfo attackAnime = anime.GetCurrentAnimatorStateInfo(0);
         if (attackAnime.IsName("HumanM@Attack1H01_R") && attackAnime.normalizedTime >= 1 && !canMove)
         {
-            Debug.Log("U‚èI‚í‚Á‚½I");
             anime.SetBool("isAttack", false);
             canMove = true;
         }

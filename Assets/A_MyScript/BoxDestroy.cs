@@ -5,6 +5,13 @@ using UnityEngine;
 public class BoxDestroy : MonoBehaviour
 {
     [SerializeField] string WeaponTag = "Sword";
+    [SerializeField] Transform ItemSpawnPoint;
+    [SerializeField] ItemDatabaseSO DropItem;
+
+    private void Update()
+    {
+        
+    }
     private void OnTriggerEnter(Collider other)  //‚Ç‚Á‚¿‚Å‚à”½‰ž‚·‚é‚æ‚¤‚É,Enter‚ÆStay
     {
         BoxDamage(other.tag);
@@ -21,6 +28,9 @@ public class BoxDestroy : MonoBehaviour
         if (tag == WeaponTag)
         {
             gameObject.SetActive(false);
+            Debug.Log("drop");
+
+            Instantiate(DropItem.items[0]._itemPrefab, ItemSpawnPoint.position ,Quaternion.identity);
         }
     }
 }

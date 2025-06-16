@@ -41,7 +41,6 @@ public class EnemyCtrl : MonoBehaviour
 
     private void Damage(string tag)　  //ダメージ判定
     {
-        Debug.Log("当たった" + tag);
         if (tag == WeaponTag)
         {
             gameClear.DefeatBoss = true;
