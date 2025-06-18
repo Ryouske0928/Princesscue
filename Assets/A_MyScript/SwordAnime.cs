@@ -6,11 +6,6 @@ public class SwordAnime : MonoBehaviour
 {
     //剣を振るアニメーションで呼び出してる関数
     [SerializeField] Collider SwordCol;
-    PlayerCtrl playerCtrl;
-    private void Start()
-    {
-        playerCtrl = GetComponentInParent<PlayerCtrl>();
-    }
     void SwordOnEvent()　//剣の当たり判定On & 攻撃時は移動不可に
     {
         SwordCol.enabled = true;

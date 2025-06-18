@@ -28,9 +28,8 @@ public class BoxDestroy : MonoBehaviour
         if (tag == WeaponTag)
         {
             gameObject.SetActive(false);
-            Debug.Log("drop");
 
-            Instantiate(DropItem.items[0]._itemPrefab, ItemSpawnPoint.position ,Quaternion.identity);
+            Instantiate(DropItem.items[0]._itemPrefab, ItemSpawnPoint.position ,Quaternion.identity);　//アイテムドロップ
         }
     }
 }

@@ -7,9 +7,9 @@ public class PlayerCtrl : MonoBehaviour
 {
     private CharacterController characterController;
     private Animator anime;
-    [SerializeField] float _moveSpeed;
-    private Quaternion targetRotation;
-    public bool canMove = true;
+    [SerializeField] float _moveSpeed;　//移動速度
+    private Quaternion targetRotation;　//プレイヤーの回転取得用
+    public bool canMove = true;　　　　//
     [SerializeField]private float _jumpPower;
     private float _gravity = -9.8f;
     private Vector3 velocityY;
@@ -32,7 +32,7 @@ public class PlayerCtrl : MonoBehaviour
         //プレイヤーの移動処理
         float horizon = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        var rotationSpeed = 600 * Time.deltaTime;
+        var rotationSpeed = 600 * Time.deltaTime;　//回転速度
 
         var horizontalRotation = Quaternion.AngleAxis(Camera.main.transform.eulerAngles.y, Vector3.up);　//カメラy軸の角度取得と回転作成
         Vector3 moveDirection = horizontalRotation * new Vector3(horizon, 0, vertical).normalized; //プレイヤーの移動方向をカメラ基準に回転して移動
@@ -55,7 +55,7 @@ public class PlayerCtrl : MonoBehaviour
         velocityY.y += _gravity * Time.deltaTime;
 
         //移動方向を向いていどう　　アニメーション処理
-        Vector3 combinedMove = Vector3.zero;
+        Vector3 combinedMove = Vector3.zero;                       //この combinedMoveで最終的に重力と移動ベクトルを合わせる
         if (moveDirection.magnitude >= 0.1f && canMove)
         {
             targetRotation = Quaternion.LookRotation(moveDirection);
@@ -76,7 +76,7 @@ public class PlayerCtrl : MonoBehaviour
             anime.SetBool("isRun", false);
         }
 
-        //移動とジャンプのベクトルを合わせて実際にキャラ移動
+        //combinedMoveで移動とジャンプのベクトルを合わせて実際にキャラ移動
         combinedMove.y = velocityY.y;
         characterController.Move(combinedMove * Time.deltaTime);
 

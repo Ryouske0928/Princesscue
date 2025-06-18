@@ -5,8 +5,10 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ItemDatabaseSO : ScriptableObject
 {
-    public List<ItemData> items = new List<ItemData>();
+    public List<ItemData> items = new List<ItemData>();　//データのリスト化
 }
+
+//アイテムのデータ
 [System.Serializable]
 public class ItemData
 {
