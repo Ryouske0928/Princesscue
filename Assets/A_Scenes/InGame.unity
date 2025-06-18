@@ -172,7 +172,7 @@ MonoBehaviour:
   - {fileID: 228507236}
   - {fileID: 2040963169}
   _attackCooldown: 3
-  _enemyWeapon: {fileID: 0}
+  _enemyWeapon: {fileID: 8035681660902632469}
 --- !u!1001 &86295648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6944,12 +6944,12 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.4
-  m_Height: 1.9
+  m_Height: 2
   m_Direction: 2
-  m_Center: {x: 0, y: 0.4, z: 0.42}
+  m_Center: {x: 0, y: 0.4, z: 0.5}
 --- !u!4 &8073086774397053203
 Transform:
   m_ObjectHideFlags: 0
