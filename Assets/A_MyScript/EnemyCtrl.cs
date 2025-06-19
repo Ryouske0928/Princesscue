@@ -13,6 +13,7 @@ public class EnemyCtrl : MonoBehaviour
     [SerializeField] float _chaseOffDistance; //索敵解除距離
     [SerializeField] float _attackOnDistance; //攻撃開始距離
     [SerializeField] float _moveSpeed;//移動速度
+    [Header("巡回先の座標")]
     [SerializeField] Transform[] enemyPoint;　//巡回先の座標取得用
     private int _pointNum;                //巡回座標の要素用
     private float _attackTimer = 0;

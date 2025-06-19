@@ -5673,6 +5673,7 @@ GameObject:
   - component: {fileID: 8073086774397053203}
   - component: {fileID: 8073086774397053204}
   - component: {fileID: 8073086774397053205}
+  - component: {fileID: 8073086774397053206}
   m_Layer: 0
   m_Name: Rio
   m_TagString: Player
@@ -6589,6 +6590,7 @@ GameObject:
   - component: {fileID: 8035681660902632468}
   - component: {fileID: 8035681660902632467}
   - component: {fileID: 8035681660902632469}
+  - component: {fileID: 8035681660902632470}
   m_Layer: 0
   m_Name: SlimePolyart
   m_TagString: Enemy
@@ -6950,6 +6952,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 2
   m_Center: {x: 0, y: 0.4, z: 0.5}
+--- !u!114 &8035681660902632470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153141401403456570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8d4780f0a248b4095b09b5bb17b3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 30
 --- !u!4 &8073086774397053203
 Transform:
   m_ObjectHideFlags: 0
@@ -7007,6 +7022,19 @@ MonoBehaviour:
   _moveSpeed: 4
   canMove: 1
   _jumpPower: 5
+--- !u!114 &8073086774397053206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4132312774043851613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8d4780f0a248b4095b09b5bb17b3d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
 --- !u!1 &8074667639656343872
 GameObject:
   m_ObjectHideFlags: 0
