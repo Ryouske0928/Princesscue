@@ -16,12 +16,6 @@ public class BoxDestroy : MonoBehaviour
     {
         BoxDamage(other.tag);
     }
-
-    private void OnTriggerStay(Collider other)
-    {
-        BoxDamage(other.tag);
-    }
-
     private void BoxDamage(string tag)　  //アイテムBox破壊判定
     {
         Debug.Log("箱破壊！" + tag);

@@ -28,12 +28,13 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHp -= damage;
+        CurrentHp -= damage;
+        Debug.Log(currentHp);
     }
 
     public void Heal(int amount)
     {
-        currentHp += amount;
+        CurrentHp += amount;
     }
 
     public void Die()

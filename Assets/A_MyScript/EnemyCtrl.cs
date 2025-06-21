@@ -20,6 +20,7 @@ public class EnemyCtrl : MonoBehaviour
     [SerializeField]private float _attackCooldown;
     [Header("敵攻撃判定コライダー")]
     [SerializeField] Collider _enemyWeapon;
+    private Health health;
 
     private NavMeshAgent agent;
     enum EnemyState
@@ -35,13 +36,9 @@ public class EnemyCtrl : MonoBehaviour
         _pointNum = 0;
         agent = GetComponent<NavMeshAgent>();
         agent.destination = enemyPoint[_pointNum].position;
+        health = GetComponent<Health>();
     }
     private void OnTriggerEnter(Collider other)  //どっちでも反応するように,EnterとStay
-    {
-        Damage(other.tag);
-    }
-
-    private void OnTriggerStay(Collider other)
     {
         Damage(other.tag);
     }
@@ -50,8 +47,7 @@ public class EnemyCtrl : MonoBehaviour
     {
         if (tag == WeaponTag)
         {
-            gameClear.DefeatBoss = true;
-            Destroy(gameObject);
+            health.TakeDamage(10);
         }
     }
 
