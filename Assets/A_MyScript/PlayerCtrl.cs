@@ -14,6 +14,7 @@ public class PlayerCtrl : MonoBehaviour
     private float _gravity = -9.8f;
     private Vector3 velocityY;
     private GameClear GameClear;
+    private Vector3 targetPosition;
 
     private void Awake()
     {
@@ -95,5 +96,19 @@ public class PlayerCtrl : MonoBehaviour
             anime.SetBool("isAttack", false);
             canMove = true;
         }
+    }
+
+    private void OnTriggerStay(Collider other)   //‘ÎÛ‚Ì•ûŒü‚ğŒü‚¢‚ÄUŒ‚
+    {
+        if(other.CompareTag("Enemy") || other.CompareTag("Item"))
+        {
+            if (anime.GetBool("isAttack"))
+            {
+                targetPosition = other.transform.position;
+                targetPosition.y = transform.position.y;
+                transform.LookAt(targetPosition);
+            }
+        }
+        
     }
 }
