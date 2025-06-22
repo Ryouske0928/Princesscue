@@ -13,7 +13,7 @@ public class ItemDatabaseSO : ScriptableObject
 public class ItemData
 {
     public string _name;
-    public int _itemNum;
+    public int _Num;
     public GameObject _itemPrefab;
     [TextArea]
     public string _description;

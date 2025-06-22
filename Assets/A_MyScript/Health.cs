@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHp;
     private int currentHp;
+    public Image HPGage;
     public int CurrentHp
     {
         get => currentHp;
@@ -29,12 +31,17 @@ public class Health : MonoBehaviour
     public void TakeDamage(int damage)
     {
         CurrentHp -= damage;
-        Debug.Log(currentHp);
+        float percent = (float)CurrentHp / maxHp;
+        HPGage.fillAmount = percent;
+        Debug.Log(CurrentHp);
     }
 
     public void Heal(int amount)
     {
         CurrentHp += amount;
+        float percent = (float)CurrentHp / maxHp;
+        HPGage.fillAmount = percent;
+        Debug.Log(CurrentHp);
     }
 
     public void Die()
