@@ -13,12 +13,11 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField]private float _jumpPower;
     private float _gravity = -9.8f;
     private Vector3 velocityY;
-    private GameClear GameClear;
+    public int ATK = 10;
     private Vector3 targetPosition;
 
     private void Awake()
     {
-        GameClear = GetComponent<GameClear>();
         targetRotation = transform.rotation;
     }
     // Start is called before the first frame update
@@ -110,5 +109,11 @@ public class PlayerCtrl : MonoBehaviour
             }
         }
         
+    }
+
+    public void OnAttackUp(int upNum)
+    {
+        ATK += upNum;
+        Debug.Log(ATK);
     }
 }

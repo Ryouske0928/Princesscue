@@ -5,7 +5,7 @@ using UnityEngine;
 public class BoxDestroy : MonoBehaviour
 {
     [SerializeField] string WeaponTag = "Sword";
-    [SerializeField] Transform ItemSpawnPoint;
+    [SerializeField] Transform ItemSpawnPoint;  //ƒhƒƒbƒv‚·‚éêŠ
     [SerializeField] ItemDatabaseSO DropItem;
 
     private void Update()
