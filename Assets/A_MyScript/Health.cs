@@ -33,7 +33,7 @@ public class Health : MonoBehaviour
         CurrentHp -= damage;
         float percent = (float)CurrentHp / maxHp;
         HPGage.fillAmount = percent;
-        Debug.Log(CurrentHp);
+        Debug.Log(currentHp);
     }
 
     public void Heal(int amount)
@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
         CurrentHp += amount;
         float percent = (float)CurrentHp / maxHp;
         HPGage.fillAmount = percent;
-        Debug.Log(CurrentHp);
+        Debug.Log(currentHp);
     }
 
     public void Die()

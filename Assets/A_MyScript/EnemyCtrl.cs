@@ -17,10 +17,13 @@ public class EnemyCtrl : MonoBehaviour
     [SerializeField] Transform[] enemyPoint;　//巡回先の座標取得用
     private int _pointNum;                //巡回座標の要素用
     private float _attackTimer = 0;
+    [Header("攻撃の間隔")]
     [SerializeField]private float _attackCooldown;
     [Header("敵攻撃判定コライダー")]
     [SerializeField] Collider _enemyWeapon;
     private Health health;
+    [Header("攻撃力参照")]
+    [SerializeField]private PlayerCtrl playerCtrl;
 
     private NavMeshAgent agent;
     enum EnemyState
@@ -47,7 +50,7 @@ public class EnemyCtrl : MonoBehaviour
     {
         if (tag == WeaponTag)
         {
-            health.TakeDamage(10);
+            health.TakeDamage(playerCtrl.ATK);
         }
     }
 
