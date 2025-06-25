@@ -19,11 +19,15 @@ public class EnemyCtrl : MonoBehaviour
     private float _attackTimer = 0;
     [Header("攻撃の間隔")]
     [SerializeField]private float _attackCooldown;
-    [Header("敵攻撃判定コライダー")]
+    [Header("敵武器用コライダー")]
     [SerializeField] Collider _enemyWeapon;
     private Health health;
-    [Header("攻撃力参照")]
+    [Header("被ダメージ参照元")]
     [SerializeField]private PlayerCtrl playerCtrl;
+    [Header("敵攻撃力")]
+    public int enemyATK;                         //攻撃力
+    private Animator anime;
+    [SerializeField]private float lookSpeed;　　　//敵回転速度
 
     private NavMeshAgent agent;
     enum EnemyState
@@ -40,6 +44,7 @@ public class EnemyCtrl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.destination = enemyPoint[_pointNum].position;
         health = GetComponent<Health>();
+        anime = GetComponent<Animator>();
     }
     private void OnTriggerEnter(Collider other)  //どっちでも反応するように,EnterとStay
     {
@@ -108,8 +113,19 @@ public class EnemyCtrl : MonoBehaviour
             {
                 agent.ResetPath();
 
+                //方向をプレイヤーの方へ向ける処理
+                Vector3 lookDir = (player.position - transform.position).normalized;
+                lookDir.y = 0f;
+
+                if(lookDir != Vector3.zero)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(lookDir);
+                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * lookSpeed);
+                }
+
                 if(_attackTimer >= _attackCooldown)
                 {
+                    anime.SetBool("isAttack",true);
                     Debug.Log("スライム攻撃");
                     _attackTimer = 0;
                 }
@@ -131,5 +147,6 @@ public class EnemyCtrl : MonoBehaviour
     void OffEnemyAttack()
     {
         _enemyWeapon.enabled = false;
+        anime.SetBool("isAttack",false);
     }
 }
