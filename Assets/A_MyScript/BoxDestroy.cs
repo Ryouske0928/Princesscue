@@ -7,6 +7,7 @@ public class BoxDestroy : MonoBehaviour
     [SerializeField] string WeaponTag = "Sword";
     [SerializeField] Transform ItemSpawnPoint;  //ドロップする場所
     [SerializeField] ItemDatabaseSO DropItem;
+    public int _ItemNum;
 
     private void OnTriggerEnter(Collider other)  //どっちでも反応するように,EnterとStay
     {
@@ -18,7 +19,7 @@ public class BoxDestroy : MonoBehaviour
         {
             gameObject.SetActive(false);
 
-            Instantiate(DropItem.items[0]._itemPrefab, ItemSpawnPoint.position ,Quaternion.identity);　//アイテムドロップ
+            Instantiate(DropItem.items[_ItemNum]._itemPrefab, ItemSpawnPoint.position ,Quaternion.identity);　//アイテムドロップ
         }
     }
 }
