@@ -28,6 +28,9 @@ public class EnemyCtrl : MonoBehaviour
     public int enemyATK;                         //攻撃力
     private Animator anime;
     [SerializeField]private float lookSpeed;　　　//敵回転速度
+    [Header("アイテムドロップ確率")]
+    [SerializeField] private int _dropPercent;   //ドロップ確率
+    [SerializeField] ItemDatabaseSO DropItem;　　
 
     private NavMeshAgent agent;
     enum EnemyState
@@ -56,6 +59,18 @@ public class EnemyCtrl : MonoBehaviour
         if (tag == WeaponTag)
         {
             health.TakeDamage(playerCtrl.ATK);
+            if(health.CurrentHp <= 0)　　　　//死亡時に確率でアイテムドロップさせる処理
+            {
+                int _num = Random.Range(1, 101);
+                Debug.Log(_num);
+                if(_num < _dropPercent)
+                {
+                    Debug.Log("yobareta");
+                    Vector3 position = transform.position;
+                    position.y += 1.75f;   //おそらくRbのせい？で地面にうまるため、y軸調整
+                    Instantiate(DropItem.items[0]._itemPrefab, position, Quaternion.identity);　　//現時点で回復ポーションしかドロップさせない
+                }
+            }
         }
     }
 

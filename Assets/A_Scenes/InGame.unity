@@ -498,6 +498,8 @@ MonoBehaviour:
   playerCtrl: {fileID: 8073086774397053205}
   enemyATK: 10
   lookSpeed: 3
+  _dropPercent: 10
+  DropItem: {fileID: 11400000, guid: 53106b30c1314e44bbd9f577f31d8e2d, type: 2}
 --- !u!1001 &86295648
 PrefabInstance:
   m_ObjectHideFlags: 0
