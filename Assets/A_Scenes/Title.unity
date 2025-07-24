@@ -790,6 +790,8 @@ GameObject:
   - component: {fileID: 1852045037}
   - component: {fileID: 1852045036}
   - component: {fileID: 1852045035}
+  - component: {fileID: 1852045039}
+  - component: {fileID: 1852045038}
   m_Layer: 5
   m_Name: Credit
   m_TagString: Untagged
@@ -899,6 +901,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1852045033}
   m_CullTransparentMesh: 1
+--- !u!114 &1852045038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852045033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0577ad0b0f716464d85013bdbd69cbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOutline: {fileID: 1852045039}
+  selectedColor: {r: 0, g: 0, b: 1, a: 1}
+--- !u!114 &1852045039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852045033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0}
+  m_EffectDistance: {x: 7, y: 6}
+  m_UseGraphicAlpha: 1
 --- !u!1 &2011349776
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +943,7 @@ GameObject:
   - component: {fileID: 2011349778}
   - component: {fileID: 2011349777}
   - component: {fileID: 2011349781}
+  - component: {fileID: 2011349782}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1017,6 +1049,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d205f78f313454585d045f1f53a063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2011349782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011349776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9e5b5bf57562548928437b964a4c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 2037485283}
+  - {fileID: 1852045035}
 --- !u!1 &2037485281
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,6 +1076,8 @@ GameObject:
   - component: {fileID: 2037485285}
   - component: {fileID: 2037485284}
   - component: {fileID: 2037485283}
+  - component: {fileID: 2037485286}
+  - component: {fileID: 2037485287}
   m_Layer: 5
   m_Name: Start
   m_TagString: Untagged
@@ -1078,11 +1127,11 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -1150,6 +1199,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037485281}
   m_CullTransparentMesh: 1
+--- !u!114 &2037485286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037485281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0}
+  m_EffectDistance: {x: 7, y: 6}
+  m_UseGraphicAlpha: 1
+--- !u!114 &2037485287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037485281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0577ad0b0f716464d85013bdbd69cbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOutline: {fileID: 2037485286}
+  selectedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &2072576069
 GameObject:
   m_ObjectHideFlags: 0
