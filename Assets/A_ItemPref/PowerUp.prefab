@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 1
-  _healAmount: 30
+  _healAmount: 0
   _attackUp: 10
 --- !u!135 &6970461947498287897
 SphereCollider:

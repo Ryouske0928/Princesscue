@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameClear : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameClear : MonoBehaviour
         if (other.CompareTag("Player") && DefeatBoss)
         {
             Debug.Log("姫救出！！結婚！");
+
+            //if(yPoint > 40) ～～　シーンロード先変更処理
         }
     }
     // Start is called before the first frame update

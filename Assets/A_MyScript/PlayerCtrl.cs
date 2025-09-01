@@ -111,7 +111,7 @@ public class PlayerCtrl : MonoBehaviour
         
     }
 
-    public void OnAttackUp(int upNum)
+    public void OnAttackUp(int upNum) //プレイヤーの攻撃力アップ効果
     {
         ATK += upNum;
         Debug.Log(ATK);
