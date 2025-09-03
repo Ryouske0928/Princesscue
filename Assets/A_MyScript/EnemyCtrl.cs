@@ -22,7 +22,7 @@ public class EnemyCtrl : MonoBehaviour
     [SerializeField] Collider _enemyWeapon;
     private Health health;
     [Header("被ダメージ参照元")]
-    [SerializeField]private PlayerCtrl playerCtrl;
+    [SerializeField]private PlayerCtrl playerCtrl; //プレイヤーのスクリプト
     [Header("敵攻撃力")]
     public int enemyATK;                         //攻撃力
     private Animator anime;
@@ -48,7 +48,7 @@ public class EnemyCtrl : MonoBehaviour
         health = GetComponent<Health>();
         anime = GetComponent<Animator>();
     }
-    private void OnTriggerEnter(Collider other)  //どっちでも反応するように,EnterとStay
+    private void OnTriggerEnter(Collider other)  //Enemyの攻撃に関するダメージ判定
     {
         Damage(other.tag);
     }
