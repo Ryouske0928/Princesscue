@@ -8,7 +8,6 @@ public class EnemyCtrl : MonoBehaviour
     [Header("プレイヤーからの攻撃判定コライダーのTag")]
     [SerializeField] string WeaponTag = "Sword";
     [SerializeField] Transform player;
-    [SerializeField] GameClear gameClear;
     [SerializeField] float _chaseOnDistance;  //索敵距離
     [SerializeField] float _chaseOffDistance; //索敵解除距離
     [SerializeField] float _attackOnDistance; //攻撃開始距離
