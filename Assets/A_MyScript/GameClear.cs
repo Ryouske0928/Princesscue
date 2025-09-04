@@ -10,7 +10,7 @@ public class GameClear : MonoBehaviour
     {
         if (other.CompareTag("Player") && DefeatBoss)
         {
-            Debug.Log("姫救出！！結婚！");
+            Debug.Log("ステージクリア");
 
             //if(yPoint > 40) ～～　シーンロード先変更処理
         }

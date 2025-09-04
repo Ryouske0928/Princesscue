@@ -48,7 +48,7 @@ public class EnemyCtrl : MonoBehaviour
         health = GetComponent<Health>();
         anime = GetComponent<Animator>();
     }
-    private void OnTriggerEnter(Collider other)  //Enemyの攻撃に関するダメージ判定
+    private void OnTriggerEnter(Collider other)  //Enemyが受けるダメージ判定取る用
     {
         Damage(other.tag);
     }
