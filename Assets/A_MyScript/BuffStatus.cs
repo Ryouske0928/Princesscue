@@ -5,16 +5,16 @@ using UnityEngine.UI;
 
 public class BuffStatus : MonoBehaviour
 {
-    [SerializeField] List<Image> buffs = new List<Image>();
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] List<Image> buffs = new List<Image>();   　　　　//バフステータス画像のリスト
+    [SerializeField] List<Image> currentBuffs = new List<Image>();　　//UIとして表示する用のバフリスト
+    
+    public void AddBuffStatus(Image setBuff)　　//プレイヤーにバフ適用する時の関数
     {
-        
+        currentBuffs.Add(setBuff);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DeleteBuff(Image currentBuff)
     {
-        
+        currentBuffs.Remove(currentBuff);  //これじゃだめなはず・・・　あとで見直し
     }
 }
