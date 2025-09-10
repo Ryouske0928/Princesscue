@@ -328,7 +328,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.45, z: 0}
+  m_Center: {x: 0, y: 0.56, z: 0}
 --- !u!114 &8238706927886789841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +358,8 @@ MonoBehaviour:
   lookSpeed: 3
   _dropPercent: 20
   DropItem: {fileID: 11400000, guid: 53106b30c1314e44bbd9f577f31d8e2d, type: 2}
+  _waitTime: 2
+  _spawnNum: 4
 --- !u!195 &8776629350369456199
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -406,7 +408,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &860186483119209982
 MonoBehaviour:
   m_ObjectHideFlags: 0

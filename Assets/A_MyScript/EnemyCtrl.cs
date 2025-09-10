@@ -33,6 +33,8 @@ public class EnemyCtrl : MonoBehaviour
     [Header("巡回時の休憩時間")]
     [SerializeField] private float _waitTime;
     private float _waitTimer;
+    [Header("アイテム位置調整")]
+    [SerializeField] float _spawnNum;
 
     private NavMeshAgent agent;
     enum EnemyState
@@ -69,9 +71,12 @@ public class EnemyCtrl : MonoBehaviour
                 if(_num < _dropPercent)
                 {
                     Debug.Log("yobareta");
-                    Vector3 position = transform.position;
-                    position.y += 1.75f;   //おそらくRbのせい？で地面にうまるため、y軸調整
-                    Instantiate(DropItem.items[0]._itemPrefab, position, Quaternion.identity);　　//現時点で回復ポーションしかドロップさせない
+                    Vector3 spawnPos = transform.position + Vector3.up *2f;
+                    if(Physics.Raycast(spawnPos,Vector3.down, out RaycastHit hit, 10f))
+                    {
+                        spawnPos = hit.point + Vector3.up * _spawnNum;
+                    }
+                    Instantiate(DropItem.items[0]._itemPrefab, spawnPos, Quaternion.identity);　　//現時点で回復ポーションしかドロップさせない
                 }
             }
         }
