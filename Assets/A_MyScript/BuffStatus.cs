@@ -5,16 +5,41 @@ using UnityEngine.UI;
 
 public class BuffStatus : MonoBehaviour
 {
-    [SerializeField] List<Image> buffs = new List<Image>();   　　　　//バフステータス画像のリスト
-    [SerializeField] List<Image> currentBuffs = new List<Image>();　　//UIとして表示する用のバフリスト
-    
-    public void AddBuffStatus(Image setBuff)　　//プレイヤーにバフ適用する時の関数
+    [SerializeField] public GameObject buffIconPref;  　　　　//バフステータス画像のリスト
+    [SerializeField] private Transform buffPanel; 　　//UIとして表示する用のバフリスト
+
+    [SerializeField]private Sprite attackUpSprite;
+
+    private Dictionary<string, Sprite> buffSprites;
+    private Dictionary<string, GameObject> activeBuffs = new Dictionary<string, GameObject>();
+
+    private void Start()
     {
-        currentBuffs.Add(setBuff);
+        buffSprites = new Dictionary<string, Sprite>()
+        {
+            {"AttackUp", attackUpSprite },
+        };
     }
 
-    public void DeleteBuff(Image currentBuff)
+    public void AddBuffStatus(string buffName)　　//プレイヤーにバフ適用する時の関数
     {
-        currentBuffs.Remove(currentBuff);  //これじゃだめなはず・・・　あとで見直し
+        if(activeBuffs.ContainsKey(buffName)) return;  //同じバフなら２重にしない
+
+        if(buffSprites.ContainsKey(buffName))
+        {
+            GameObject newBuff = Instantiate(buffIconPref, buffPanel);
+            newBuff.GetComponent<Image>().sprite = buffSprites[buffName];
+            activeBuffs.Add(buffName, newBuff);
+        }
+    }
+
+    public void DeleteBuff(string buffName)
+    {
+        if (activeBuffs.ContainsKey(buffName))
+        {
+            Destroy(activeBuffs[buffName]);
+            activeBuffs.Remove(buffName);
+        }
+
     }
 }

@@ -1665,6 +1665,10 @@ PrefabInstance:
       propertyPath: HPGage
       value: 
       objectReference: {fileID: 632194234}
+    - target: {fileID: 7745787740441305316, guid: c194336371b5b174a849d078220e3d8e, type: 3}
+      propertyPath: m_Center.y
+      value: 1.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

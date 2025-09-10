@@ -24,13 +24,14 @@ public class ItemCtrl : MonoBehaviour
         {
             PlayerCtrl power = other.GetComponentInParent<PlayerCtrl>();
             Health hp = other.GetComponentInParent<Health>();
-            GetItem(power, hp);
+            BuffStatus buff = other.GetComponentInParent<BuffStatus>();
+            GetItem(power, hp, buff);
             Destroy(gameObject);
         }
     }
     
     //アイテム取得時の処理
-    void GetItem(PlayerCtrl power, Health hp)
+    void GetItem(PlayerCtrl power, Health hp, BuffStatus buff)
     {
         switch (itemType)
         {
@@ -40,6 +41,7 @@ public class ItemCtrl : MonoBehaviour
 
             case ItemType.AttackUp:　　　　　　　//火力UPアイテム
                 power.OnAttackUp(_attackUp);
+                buff.AddBuffStatus("AttackUp");
                 break;
             case ItemType.Coin:　　　　　　　　　//自己満コイン
 
