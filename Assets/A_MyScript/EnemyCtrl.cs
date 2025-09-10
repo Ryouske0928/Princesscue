@@ -126,6 +126,10 @@ public class EnemyCtrl : MonoBehaviour
 
     void ChaseAndAttack(float _distance)@//’ÇÕ‚ÆUŒ‚ˆ—
     {
+        if(anime.GetBool("isSearch") == true)
+        {
+            anime.SetBool("isSearch",false);
+        }
         if (!agent.pathPending)
         {
             if(_distance > _attackOnDistance)
