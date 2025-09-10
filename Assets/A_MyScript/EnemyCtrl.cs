@@ -29,7 +29,10 @@ public class EnemyCtrl : MonoBehaviour
     [SerializeField]private float lookSpeed;　　　//敵回転速度
     [Header("アイテムドロップ確率")]
     [SerializeField] private int _dropPercent;   //ドロップ確率
-    [SerializeField] ItemDatabaseSO DropItem;　　
+    [SerializeField] ItemDatabaseSO DropItem;
+    [Header("巡回時の休憩時間")]
+    [SerializeField] private float _waitTime;
+    private float _waitTimer;
 
     private NavMeshAgent agent;
     enum EnemyState
@@ -42,6 +45,7 @@ public class EnemyCtrl : MonoBehaviour
     private void Start()
     {
         _attackTimer = 0;
+        _waitTimer = 0;
         _pointNum = 0;
         agent = GetComponent<NavMeshAgent>();
         agent.destination = enemyPoint[_pointNum].position;
@@ -104,7 +108,14 @@ public class EnemyCtrl : MonoBehaviour
     {
         if (!agent.pathPending && agent.remainingDistance < 0.5f)
         {
-            SetNextPoint();
+            anime.SetBool("isSearch",true);
+            _waitTimer += Time.deltaTime;
+            if(_waitTimer > _waitTime)　　　//巡回時にある程度待機させてから、次の地点に移動
+            {
+                SetNextPoint();
+                anime.SetBool("isSearch",false);
+                _waitTimer = 0;
+            }
         }
     }
 
