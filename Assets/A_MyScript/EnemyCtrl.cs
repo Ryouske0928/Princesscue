@@ -35,7 +35,7 @@ public class EnemyCtrl : MonoBehaviour
     private float _waitTimer;
     [Header("アイテム位置調整")]
     [SerializeField] float _spawnNum;
-
+    [SerializeField] private DamagePlayerBody onceDamage;
     private NavMeshAgent agent;
     enum EnemyState
     {
@@ -61,9 +61,10 @@ public class EnemyCtrl : MonoBehaviour
 
     private void Damage(string tag)　  //プレイヤーからのダメージ判定
     {
-        if (tag == WeaponTag)
+        if (tag == WeaponTag && !playerCtrl.hasHitE)
         {
             health.TakeDamage(playerCtrl.ATK);
+            playerCtrl.hasHitE = true;
             if(health.CurrentHp <= 0)　　　　//死亡時に確率でアイテムドロップさせる処理
             {
                 int _num = Random.Range(1, 101);
@@ -176,6 +177,7 @@ public class EnemyCtrl : MonoBehaviour
     void OnEnemyAttack()
     {
         _enemyWeapon.enabled = true;
+        onceDamage.hasHitP = false;
     }
 
     void OffEnemyAttack()

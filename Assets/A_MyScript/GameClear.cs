@@ -6,13 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameClear : MonoBehaviour
 {
     public  bool DefeatBoss;
+    [Header("ロード先シーン")]
+    [SerializeField] private string LoadScene;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && DefeatBoss)
         {
             Debug.Log("ステージクリア");
-
-            //if(yPoint > 40) ～～　シーンロード先変更処理
+            SceneManager.LoadScene(LoadScene);
         }
     }
     // Start is called before the first frame update

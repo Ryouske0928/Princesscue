@@ -10,11 +10,13 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] float _moveSpeed;　//移動速度
     private Quaternion targetRotation;　//プレイヤーの回転取得用
     public bool canMove = true;　　　　//
-    [SerializeField]private float _jumpPower;
+    [SerializeField] private float _jumpPower;
     private float _gravity = -9.8f;
     private Vector3 velocityY;
     public int ATK = 10;
     private Vector3 targetPosition;
+    public bool hasHitE = false;
+    [SerializeField] private Transform currentTarget;
 
     private void Awake()
     {
@@ -95,20 +97,30 @@ public class PlayerCtrl : MonoBehaviour
             anime.SetBool("isAttack", false);
             canMove = true;
         }
+
+        if(currentTarget != null && anime.GetBool("isAttack"))
+        {
+            targetPosition = currentTarget.position;
+            targetPosition.y = transform.position.y;
+            transform.LookAt(targetPosition);
+        }
     }
 
-    private void OnTriggerStay(Collider other)   //対象の方向を向いて攻撃
+    private void OnTriggerEnter(Collider other)   //対象の方向を向いて攻撃
     {
         if(other.CompareTag("Enemy") || other.CompareTag("Item"))
         {
-            if (anime.GetBool("isAttack"))
-            {
-                targetPosition = other.transform.position;
-                targetPosition.y = transform.position.y;
-                transform.LookAt(targetPosition);
-            }
+            currentTarget = other.transform;
         }
         
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.transform == currentTarget)
+        {
+            currentTarget = null;
+        }
     }
 
     public void OnAttackUp(int upNum) //プレイヤーの攻撃力アップ効果
