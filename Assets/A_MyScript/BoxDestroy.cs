@@ -5,9 +5,9 @@ using UnityEngine;
 public class BoxDestroy : MonoBehaviour
 {
     [SerializeField] string WeaponTag = "Sword";
-    [SerializeField] Transform ItemSpawnPoint;  //ドロップする場所
     [SerializeField] ItemDatabaseSO DropItem;
     public int _ItemNum;
+    private Vector3 ItemDropPosition;
 
     private void OnTriggerEnter(Collider other)  //どっちでも反応するように,EnterとStay
     {
@@ -18,8 +18,9 @@ public class BoxDestroy : MonoBehaviour
         if (tag == WeaponTag)
         {
             gameObject.SetActive(false);
-
-            Instantiate(DropItem.items[_ItemNum]._itemPrefab, ItemSpawnPoint.position ,Quaternion.identity);　//アイテムドロップ
+            ItemDropPosition = transform.position;
+            ItemDropPosition.y += 0.5f;                     //地面に埋まるため、位置調整
+            Instantiate(DropItem.items[_ItemNum]._itemPrefab, ItemDropPosition ,Quaternion.identity);　//アイテムドロップ
         }
     }
 }
