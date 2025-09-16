@@ -6,8 +6,23 @@ using UnityEngine.SceneManagement;
 public class ButtonEvent : MonoBehaviour
 {
 
-    public void LoadInGameScene()   //InGameのロード用
+    public void LoadSelectStageScene()   //InGameのロード用
     {
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("StageSelect");
+    }
+
+    public void LoadStage1()
+    {
+        SceneManager.LoadScene("Stage1");
+    }
+
+    public void LoadStage2()
+    {
+        SceneManager.LoadScene("Stage2");
+    }
+
+    public void LoadStage3()
+    {
+        SceneManager.LoadScene("Stage3");
     }
 }
