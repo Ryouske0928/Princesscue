@@ -23943,7 +23943,7 @@ PrefabInstance:
     - target: {fileID: 6610957099017800386, guid: c194336371b5b174a849d078220e3d8e, type: 3}
       propertyPath: attackUpSprite
       value: 
-      objectReference: {fileID: 21300000, guid: 6e1e358998a9f4c4d80d85731f35ace1, type: 3}
+      objectReference: {fileID: -1681276701, guid: 4be2b2d44d250ee42b80cd311728b13a, type: 3}
     - target: {fileID: 7745787740441305316, guid: c194336371b5b174a849d078220e3d8e, type: 3}
       propertyPath: m_Center.y
       value: 1.08

@@ -26,7 +26,7 @@ public class ItemCtrl : MonoBehaviour
             Health hp = other.GetComponentInParent<Health>();
             BuffStatus buff = other.GetComponentInParent<BuffStatus>();
             GetItem(power, hp, buff);
-            Destroy(gameObject);
+            Destroy(transform.root.gameObject);
         }
     }
     

@@ -17,6 +17,7 @@ public class BoxDestroy : MonoBehaviour
     {
         if (tag == WeaponTag)
         {
+            AudioManager.Instance.IsPlaySE("ñÿî†îjâÛ");
             gameObject.SetActive(false);
             ItemDropPosition = transform.position;
             ItemDropPosition.y += 0.5f;                     //ínñ Ç…ñÑÇ‹ÇÈÇΩÇﬂÅAà íuí≤êÆ

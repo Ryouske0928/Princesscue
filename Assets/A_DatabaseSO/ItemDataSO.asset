@@ -19,7 +19,7 @@ MonoBehaviour:
     _description: "\u56DE\u5FA9\u30DD\u30FC\u30B7\u30E7\u30F3"
   - _name: "\u653B\u6483up\u30DD\u30FC\u30B7\u30E7\u30F3"
     _Num: 1
-    _itemPrefab: {fileID: 3449207126992603182, guid: 09beb3b956e69aa4286f0ed6d0acf18a, type: 3}
+    _itemPrefab: {fileID: 764738801286515297, guid: ceaa59e7c60fa5e468d53ce89423afe2, type: 3}
     _description: "\u4E00\u5B9A\u6642\u9593\u653B\u6483\u529BUP"
   - _name: "\u52C7\u8005\u30B3\u30A4\u30F3"
     _Num: 2

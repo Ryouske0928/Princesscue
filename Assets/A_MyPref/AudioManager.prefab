@@ -110,6 +110,10 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 30c6d24ab6613fa49bcb07530152a838, type: 3}
     _volume: 1
     _pitch: 1
+  - _name: "\u6728\u7BB1\u7834\u58CA"
+    _clip: {fileID: 8300000, guid: 4c8b641cb7ce8be488d1295de9d0c2fd, type: 3}
+    _volume: 1
+    _pitch: 1
   _bgmSourceA: {fileID: 0}
   _bgmSourceB: {fileID: 0}
   _seSource: {fileID: 0}

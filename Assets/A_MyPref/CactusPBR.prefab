@@ -448,7 +448,7 @@ MonoBehaviour:
   playerCtrl: {fileID: 0}
   enemyATK: 13
   lookSpeed: 3
-  _dropPercent: 15
+  _dropPercent: 20
   DropItem: {fileID: 11400000, guid: 53106b30c1314e44bbd9f577f31d8e2d, type: 2}
   _waitTime: 10
   _spawnNum: 2.1
