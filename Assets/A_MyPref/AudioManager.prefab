@@ -70,7 +70,7 @@ MonoBehaviour:
     _volume: 0.2
     _pitch: 1
   - _name: GameClear
-    _clip: {fileID: 8300000, guid: 5b5a202e4f7aebd438dbfb8008493c3f, type: 3}
+    _clip: {fileID: 8300000, guid: 960be543da53b6b4a81621f488a99f6a, type: 3}
     _volume: 0.2
     _pitch: 1
   _seSounds:

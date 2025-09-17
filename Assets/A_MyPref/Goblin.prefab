@@ -19912,7 +19912,7 @@ MonoBehaviour:
   _dropPercent: 20
   DropItem: {fileID: 11400000, guid: 53106b30c1314e44bbd9f577f31d8e2d, type: 2}
   _waitTime: 2
-  _spawnNum: -0.5
+  _spawnNum: -1
   onceDamage: {fileID: 0}
 --- !u!195 &2072289252110992955
 NavMeshAgent:
