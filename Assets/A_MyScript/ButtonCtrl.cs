@@ -63,5 +63,6 @@ public class ButtonCtrl : MonoBehaviour
     private void SelectButton(int buttonNum)
     {
         EventSystem.current.SetSelectedGameObject(buttons[buttonNum].gameObject);  //イベントシステムに選択されたボタンを設定
+
     }
 }

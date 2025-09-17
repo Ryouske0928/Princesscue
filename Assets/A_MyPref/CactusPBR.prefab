@@ -436,7 +436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponTag: Sword
   player: {fileID: 0}
-  _chaseOnDistance: 5
+  _chaseOnDistance: 9
   _chaseOffDistance: 5
   _attackOnDistance: 1.5
   _moveSpeed: 1.5
@@ -452,6 +452,7 @@ MonoBehaviour:
   DropItem: {fileID: 11400000, guid: 53106b30c1314e44bbd9f577f31d8e2d, type: 2}
   _waitTime: 10
   _spawnNum: 2.1
+  onceDamage: {fileID: 0}
 --- !u!136 &191316122711061389
 CapsuleCollider:
   m_ObjectHideFlags: 0

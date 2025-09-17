@@ -46,6 +46,7 @@ public class Stage2Boss : MonoBehaviour
         {
             health.TakeDamage(playerCtrl.ATK);
             playerCtrl.hasHitE = true;
+            AudioManager.Instance.IsPlaySE("UŒ‚Hit");
             if (health.CurrentHp <= 0)
             {
                 gameClear.DefeatBoss = true;

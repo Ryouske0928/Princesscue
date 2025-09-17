@@ -7,7 +7,8 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public List<Sounds> _bgmSounds;
     public List<Sounds> _seSounds;
-    public AudioSource _bgmSource;
+    public AudioSource _bgmSourceA; 
+    public AudioSource _bgmSourceB;
     public AudioSource _seSource;
 
     [System.Serializable]
@@ -31,7 +32,8 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        _bgmSource = gameObject.AddComponent<AudioSource>();
+        _bgmSourceA = gameObject.AddComponent<AudioSource>();
+        _bgmSourceB = gameObject.AddComponent<AudioSource>();
         _seSource = gameObject.AddComponent<AudioSource>();
     }
 
@@ -40,11 +42,11 @@ public class AudioManager : MonoBehaviour
         Sounds bgm = _bgmSounds.Find(sound => sound._name == name);
         if (bgm != null)
         {
-            _bgmSource.clip = bgm._clip;
-            _bgmSource.volume = bgm._volume;
-            _bgmSource.pitch = bgm._pitch;
-            _bgmSource.loop = true;
-            _bgmSource.Play();
+            _bgmSourceA.clip = bgm._clip;
+            _bgmSourceA.volume = bgm._volume;
+            _bgmSourceA.pitch = bgm._pitch;
+            _bgmSourceA.loop = true;
+            _bgmSourceA.Play();
             Debug.Log("BGM再生中");
         }
         else
@@ -65,6 +67,48 @@ public class AudioManager : MonoBehaviour
 
     public void IsStopBGM()
     {
-        _bgmSource.Stop();
+        _bgmSourceA.Stop();
     }
+
+    public IEnumerator FadeIn(string name, float duration, float targetVolume)　　//フェードイン処理
+    {
+        Sounds bgm = _bgmSounds.Find(sound => sound._name == name);
+        if (bgm != null)
+        {
+            _bgmSourceA.clip = bgm._clip;
+            _bgmSourceA.volume = 0;
+            _bgmSourceA.pitch = bgm._pitch;
+            _bgmSourceA.loop = true;
+            _bgmSourceA.Play();
+        }
+        else
+        {
+            Debug.Log("見つかりません");
+        }
+
+        float currentTime = 0f;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            _bgmSourceA.volume = Mathf.Lerp(0f, targetVolume, currentTime / duration);
+            yield return null;
+        }
+    }
+
+    public IEnumerator FadeOut(float duration)    //フェードアウト処理
+    {
+        float startVolume = _bgmSourceA.volume;
+        float currentTime = 0f;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            _bgmSourceA.volume = Mathf.Lerp(startVolume, 0f, currentTime / duration);
+            yield return null;
+        }
+
+        _bgmSourceA.Stop();
+    }
+
 }

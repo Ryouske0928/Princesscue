@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3390093440380139409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3318887586100151496}
+  - component: {fileID: 3276215566147784563}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3318887586100151496
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3390093440380139409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 977.22845, y: 536.89496, z: 44.293343}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3276215566147784563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3390093440380139409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305dbc55744ac2241a0edde984a83592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bgmSounds:
+  - _name: "\u30BF\u30A4\u30C8\u30EBBGM"
+    _clip: {fileID: 8300000, guid: 59467beb9438fa545ae68b8c1426e573, type: 3}
+    _volume: 0.1
+    _pitch: 1
+  - _name: Stage1BGM
+    _clip: {fileID: 8300000, guid: 86441850a4c454d4395eadbff77dd4c7, type: 3}
+    _volume: 0.1
+    _pitch: 1
+  - _name: Stage2BGM
+    _clip: {fileID: 8300000, guid: 3a0cde72001a2df4eb693394a3c6e25b, type: 3}
+    _volume: 0.1
+    _pitch: 1
+  - _name: Stage3BGM
+    _clip: {fileID: 8300000, guid: a27a489a1875f75469e60c8dc9cc5133, type: 3}
+    _volume: 0.1
+    _pitch: 1
+  - _name: BossBattle
+    _clip: {fileID: 8300000, guid: 7c4f5355ab2b2864b8c2579808377eaa, type: 3}
+    _volume: 0.2
+    _pitch: 1
+  - _name: Stage3BossBattle
+    _clip: {fileID: 8300000, guid: 95b3ffe8fea19bb4fb87f7cb591fbaac, type: 3}
+    _volume: 0.2
+    _pitch: 1
+  - _name: GameClear
+    _clip: {fileID: 8300000, guid: 5b5a202e4f7aebd438dbfb8008493c3f, type: 3}
+    _volume: 0.2
+    _pitch: 1
+  _seSounds:
+  - _name: "\u30BF\u30A4\u30C8\u30EB\u6C7A\u5B9A"
+    _clip: {fileID: 8300000, guid: 5fd522ac6e6407548a107b9cdce9cde3, type: 3}
+    _volume: 1
+    _pitch: 1
+  - _name: "\u30B9\u30C6\u30FC\u30B8\u9078\u629E"
+    _clip: {fileID: 8300000, guid: ae859d65f07f4994c969b4eadc0466b9, type: 3}
+    _volume: 1
+    _pitch: 1
+  - _name: "\u30B9\u30C6\u30FC\u30B8\u6C7A\u5B9A"
+    _clip: {fileID: 8300000, guid: cf2470684f85d4b45ae7f132fb950c2b, type: 3}
+    _volume: 1
+    _pitch: 1
+  - _name: ReturnTitle
+    _clip: {fileID: 8300000, guid: dfd88f8d5a462d643b610adb4ffdcf50, type: 3}
+    _volume: 1
+    _pitch: 1
+  - _name: "\u706B\u529BUP"
+    _clip: {fileID: 8300000, guid: d0546f4805a24b443af55501c5f17fc3, type: 3}
+    _volume: 1
+    _pitch: 1
+  - _name: "\u56DE\u5FA9\u30DD\u30FC\u30B7\u30E7\u30F3"
+    _clip: {fileID: 8300000, guid: 05899d458ec6ba6448e207b37f98d64f, type: 3}
+    _volume: 1
+    _pitch: 1
+  - _name: "\u653B\u6483Hit"
+    _clip: {fileID: 8300000, guid: 99c28336906c5864aa7322f63e4c94c4, type: 3}
+    _volume: 1
+    _pitch: 1
+  - _name: "\u30D7\u30EC\u30A4\u30E4\u30FC\u30C0\u30E1\u30FC\u30B8"
+    _clip: {fileID: 8300000, guid: 9785c0be1a7f79c41a2c1f5068fa56ae, type: 3}
+    _volume: 1
+    _pitch: 1
+  - _name: "\u30E9\u30B9\u30DC\u30B9\u9580"
+    _clip: {fileID: 8300000, guid: 30c6d24ab6613fa49bcb07530152a838, type: 3}
+    _volume: 1
+    _pitch: 1
+  _bgmSourceA: {fileID: 0}
+  _bgmSourceB: {fileID: 0}
+  _seSource: {fileID: 0}

@@ -9,6 +9,7 @@ public class TeleportBossArea : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.Instance.IsPlaySE("ƒ‰ƒXƒ{ƒX–å");
             CharacterController cc = other.GetComponent<CharacterController>();
             cc.enabled = false;
             other.transform.position = BossZone.position;

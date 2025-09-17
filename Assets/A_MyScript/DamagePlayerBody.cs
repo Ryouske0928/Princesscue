@@ -12,12 +12,14 @@ public class DamagePlayerBody : MonoBehaviour
     private string Boss2Tag2 = "Boss2Weapon2";
     private string Boss3Tag = "Boss3Weapon";
     public bool hasHitP = false;
+    [SerializeField] GameObject GameOverCanvas;
     private void OnTriggerEnter(Collider other)
     {
         if(!hasHitP && other.tag == EnemyTag)
         {
             EnemyCtrl enemyCtrl = other.GetComponentInParent<EnemyCtrl>();
             health.TakeDamage(enemyCtrl.enemyATK);　　　     //敵の攻撃力を参照してダメージ処理
+            AudioManager.Instance.IsPlaySE("プレイヤーダメージ");
             hasHitP = true;
         }
 
@@ -25,12 +27,14 @@ public class DamagePlayerBody : MonoBehaviour
         {
             BossCtrl bossCtrl = other.GetComponentInParent<BossCtrl>();
             health.TakeDamage(bossCtrl._bossATK1);
+            AudioManager.Instance.IsPlaySE("プレイヤーダメージ");
             hasHitP = true;
         }
         if (!hasHitP && other.tag == BossTag2)
         {
             BossCtrl bossCtrl = other.GetComponentInParent<BossCtrl>();
             health.TakeDamage(bossCtrl._bossATK2);
+            AudioManager.Instance.IsPlaySE("プレイヤーダメージ");
             hasHitP = true;
         }
 
@@ -38,12 +42,14 @@ public class DamagePlayerBody : MonoBehaviour
         {
             Stage2Boss bossCtrl = other.GetComponentInParent<Stage2Boss>();
             health.TakeDamage(bossCtrl._bossATK1);
+            AudioManager.Instance.IsPlaySE("プレイヤーダメージ");
             hasHitP = true;
         }
         if (!hasHitP && other.tag == Boss2Tag2)
         {
             Stage2Boss bossCtrl = other.GetComponentInParent<Stage2Boss>();
             health.TakeDamage(bossCtrl._bossATK2);
+            AudioManager.Instance.IsPlaySE("プレイヤーダメージ");
             hasHitP = true;
         }
 
@@ -51,7 +57,13 @@ public class DamagePlayerBody : MonoBehaviour
         {
             S3BossCtrl bossCtrl = other.GetComponentInParent<S3BossCtrl>();
             health.TakeDamage(bossCtrl._bossATK1);
+            AudioManager.Instance.IsPlaySE("プレイヤーダメージ");
             hasHitP = true;
+        }
+
+        if (health.CurrentHp <= 0)
+        {
+            GameOverCanvas.SetActive(true);
         }
     }
 

@@ -14,6 +14,7 @@ public class ButtonOutline : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
     public void OnSelect(BaseEventData eventData)
     {
         buttonOutline.effectColor = selectedColor;  //選択された時に輪郭の色を任意の色に変更する　(初期は青に設定)
+        AudioManager.Instance.IsPlaySE("ステージ選択");
     }
 
     // ボタンが選択解除された時
@@ -26,6 +27,7 @@ public class ButtonOutline : MonoBehaviour, ISelectHandler, IDeselectHandler, IP
     public void OnPointerEnter(PointerEventData eventData)
     {
         buttonOutline.effectColor = selectedColor;  //選択された時に輪郭の色を任意の色に変更する　(初期は青)
+        AudioManager.Instance.IsPlaySE("ステージ選択");
     }
 
     //ボタンからマウスカーソルが外れた時

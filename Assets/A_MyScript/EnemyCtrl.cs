@@ -65,7 +65,8 @@ public class EnemyCtrl : MonoBehaviour
         {
             health.TakeDamage(playerCtrl.ATK);
             playerCtrl.hasHitE = true;
-            if(health.CurrentHp <= 0)　　　　//死亡時に確率でアイテムドロップさせる処理
+            AudioManager.Instance.IsPlaySE("攻撃Hit");
+            if (health.CurrentHp <= 0)　　　　//死亡時に確率でアイテムドロップさせる処理
             {
                 int _num = Random.Range(1, 101);
                 Debug.Log(_num);

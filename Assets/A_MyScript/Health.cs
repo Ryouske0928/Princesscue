@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
         CurrentHp += amount;
         float percent = (float)CurrentHp / maxHp;
         HPGage.fillAmount = percent;
-        Debug.Log(currentHp);
+        AudioManager.Instance.IsPlaySE("‰ñ•œƒ|[ƒVƒ‡ƒ“");
     }
 
     public void Die()

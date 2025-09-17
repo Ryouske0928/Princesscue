@@ -17,7 +17,7 @@ public class BuffStatus : MonoBehaviour
     {
         buffSprites = new Dictionary<string, Sprite>()
         {
-            {"AttackUp", attackUpSprite },
+            {"AttackUp", attackUpSprite }
         };
     }
 
@@ -30,6 +30,7 @@ public class BuffStatus : MonoBehaviour
             GameObject newBuff = Instantiate(buffIconPref, buffPanel);
             newBuff.GetComponent<Image>().sprite = buffSprites[buffName];
             activeBuffs.Add(buffName, newBuff);
+            AudioManager.Instance.IsPlaySE("‰Î—ÍUP");
         }
     }
 

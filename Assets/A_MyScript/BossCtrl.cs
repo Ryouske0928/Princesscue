@@ -46,7 +46,8 @@ public class BossCtrl : MonoBehaviour
         {
             health.TakeDamage(playerCtrl.ATK);
             playerCtrl.hasHitE = true;
-            if(health.CurrentHp <= 0)
+            AudioManager.Instance.IsPlaySE("UŒ‚Hit");
+            if (health.CurrentHp <= 0)
             {
                 gameClear.DefeatBoss = true;
             }
