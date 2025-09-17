@@ -20,7 +20,7 @@ public class ButtonCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W)　|| Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.W)　|| Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
         {
             if(!firstSelect)
             {
@@ -31,7 +31,7 @@ public class ButtonCtrl : MonoBehaviour
             else
             {
                 //Wキー入力で上へ移動
-                if(Input.GetKeyDown(KeyCode.W))
+                if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A))
                 {
                     _selectButtonNum--;
                     if(_selectButtonNum < 0)
@@ -40,7 +40,7 @@ public class ButtonCtrl : MonoBehaviour
                     }
                 }
                 //Sキー入力で下へ移動
-                if (Input.GetKeyDown(KeyCode.S))
+                if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
                     _selectButtonNum++;
                     if(_selectButtonNum >= buttons.Length)
